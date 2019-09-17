@@ -1,0 +1,21 @@
+<h2>Import</h2>
+
+<%= form_tag import_users_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag 'Import' %>
+<% end %>
+
+<h2>Users</h2>
+
+<table style='width:400px'>
+  <tr>
+    <th>Name</th>
+    <th>Code</th>
+  </tr>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.name %></td>
+      <td><%= user.code %></td>
+    </tr>
+  <% end %>
+</table>
